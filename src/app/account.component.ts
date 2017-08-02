@@ -12,25 +12,27 @@ export class AccountComponent implements OnInit {
     public accountList: Array<Account> = [];
 
     constructor(){
-        let a = new Account();
-        a.acc_id = "001";
-        a.acc_name = "CAPITAL";
-        a.acc_ctg_type = 4;
-        a.acc_comment = "Capital Account";
-        a.acc_check_day = 1;
-        a.acc_average_min_balance = 0;
-        a.acc_payment_day = 0;
+        let a = new Account({
+            acc_id: "001"
+            , acc_name: "CAPITAL"
+            , acc_ctg_type: 4
+            , acc_comment: "Capital Account"
+            , acc_check_day: 1
+            , acc_average_min_balance: 0
+            , acc_payment_day: 0
+        });
 
         this.accountList.push(a);
 
-        a = new Account();
-        a.acc_id = "002";
-        a.acc_name = "Mosho Cartera";
-        a.acc_ctg_type = 1;
-        a.acc_comment = "Efectivo";
-        a.acc_check_day = 1;
-        a.acc_average_min_balance = 0;
-        a.acc_payment_day = 0;
+        a = new Account({
+            acc_id: "002"
+            , acc_name: "Mosho Cartera"
+            , acc_ctg_type: 1
+            , acc_comment: "Efectivo"
+            , acc_check_day: 1
+            , acc_average_min_balance: 0
+            , acc_payment_day: 0
+        });
         this.accountList.push(a);
     }
 
