@@ -30,7 +30,8 @@ export class MovementComponent implements OnInit {
     };
     public model: any = { /* UI default form data */
         type: 1
-        , date: '2017-07-24'
+        , date: ''
+        , category: 0
     };
     public viewAddCategoryForm: boolean = false;
     public services = {
@@ -75,6 +76,7 @@ export class MovementComponent implements OnInit {
             , 'Health'
         ];
 
+        this.model.date = this.DateToStringDate(new Date());
     }
 
     ngOnInit(){
@@ -170,6 +172,16 @@ export class MovementComponent implements OnInit {
         return undefined;
     }
 
+    DateToStringDate(date: Date){
+        const mm = date.getMonth() + 1;
+        const dd = date.getDate();
+
+        return [date.getFullYear(),
+                (mm>9 ? '' : '0') + mm,
+                (dd>9 ? '' : '0') + dd
+                ].join('-');
+    }
+
     /*getAccounts(): Array<Account>{
         return this.services.account.getAll();
     }*/
@@ -230,6 +242,7 @@ export class MovementComponent implements OnInit {
 
     addNewCategoryForUser(category: string, user: string){
         this.categories.push(new Category({mct_id: this.categories.length + 1,mct_name: category,mct_user: user}));
+        this.model.category = this.categories.length;
     }
 
 }
