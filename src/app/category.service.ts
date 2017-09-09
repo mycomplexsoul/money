@@ -17,83 +17,13 @@ export class CategoryService {
 
     initialData(){
         let list: Array<Category>;
-        
-        let data = [{
-            mct_id: '1'
-            , mct_name: 'Capital'
-        },{
-            mct_id: '2'
-            , mct_name: 'Mosho Cartera'
-        },{
-            mct_id: '3'
-            , mct_name: 'Mosho Libreton'
-        },{
-            mct_id: '4'
-            , mct_name: 'Mosho Nomina'
-        },{
-            mct_id: '5'
-            , mct_name: 'Mosho Credito'
-        },{
-            mct_id: '6'
-            , mct_name: 'Mosho Puntos'
-        },{
-            mct_id: '7'
-            , mct_name: 'Mosho Santander'
-        },{
-            mct_id: '8'
-            , mct_name: 'Hipoteca'
-        },{
-            mct_id: '9'
-            , mct_name: 'Mosho Inversion'
-        },{
-            mct_id: '10'
-            , mct_name: 'Prestamos Mosho a Otros'
-        },{
-            mct_id: '11'
-            , mct_name: 'Prestamos Mosho a Lau'
-        },{
-            mct_id: '12'
-            , mct_name: 'Prestamos Mosho a Oliva'
-        },{
-            mct_id: '13'
-            , mct_name: 'Prestamos Mosho a Memo'
-        },{
-            mct_id: '14'
-            , mct_name: 'Revolvente Moshos'
-        },{
-            mct_id: '15'
-            , mct_name: 'LPHT Nom Bancomer'
-        },{
-            mct_id: '16'
-            , mct_name: 'LPHT Deb Bancomer'
-        },{
-            mct_id: '17'
-            , mct_name: 'LPHT Deb Banamex'
-        },{
-            mct_id: '18'
-            , mct_name: 'LPHT Cred Banamex'
-        },{
-            mct_id: '19'
-            , mct_name: 'LPHT Cartera'
-        },{
-            mct_id: '20'
-            , mct_name: 'Prestamos Lau a MamaAgüis'
-        },{
-            mct_id: '21'
-            , mct_name: 'Prestamos Lau a Hermano'
-        },{
-            mct_id: '22'
-            , mct_name: 'Fondo de Reserva CV'
-        },{
-            mct_id: '23'
-            , mct_name: 'Adeudo a FR'
-        },{
-            mct_id: '24'
-            , mct_name: 'Prestamos FR a Mosho'
-        },{
-            mct_id: '25'
-            , mct_name: 'Capital CV'
-        }];
+
+        let newData = (mct_id: string, mct_name: string) => {
+            return {mct_id, mct_name};
+        };
+        let data = [];
+        data.push(newData('1','Cap'));
+        data.push(newData('2','Cart'));
         
         list = data.map((d: any) => {
             d.mct_user = this.config.defaultUser;

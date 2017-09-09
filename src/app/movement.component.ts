@@ -241,8 +241,9 @@ export class MovementComponent implements OnInit {
     }
 
     addNewCategoryForUser(category: string, user: string){
-        this.categories.push(new Category({mct_id: this.categories.length + 1,mct_name: category,mct_user: user}));
-        this.model.category = this.categories.length;
+        let newId: string = this.categories.length + 1 + '';
+        this.categories.push(new Category({mct_id: newId,mct_name: category,mct_user: user}));
+        this.model.category = newId;
     }
 
 }

@@ -78,9 +78,9 @@
         <span>
             <label for="fCategory" class="label-left">Category</label>
             <select name="fCategory" id="fCategory" [(ngModel)]="model.category">
-                <option *ngFor="let opt of viewData.categories" value="{{opt.mct_id}}">{{opt.mct_name}}</option>
+                <option *ngFor="let opt of viewData.categories" [value]="opt.mct_id" [selected]="opt.mct_id === newMovementForm.value.fCategory">{{opt.mct_name}}</option>
             </select>
-            <button (click)="viewAddCategoryForm = !viewAddCategoryForm">+</button>
+            <button (click)="viewAddCategoryForm = !viewAddCategoryForm;">+</button>
             <div *ngIf="viewAddCategoryForm">
                 <label for="fNewCategory">New Category</label>
                 <input type="text" name="fNewCategory" id="fNewCategory" ngModel>
